@@ -23,6 +23,12 @@ This is the rewrite.
 1. I don't like external network calls to someone else, and don't like that dependency
 2. We had the domain and weren't actively using it
 
+## How can I run it?
+
+Just use Docker. We've added a multistage `Dockerbuild` for convenience. It creates a container that's 6.33MB large.
+
+Otherwise, your preferred Rust workflow is fine, if you're a Rust user. This will run on stable.
+
 ## How does it work?
 
 It is a gRPC server, that has 3 endpoints:
