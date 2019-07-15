@@ -1,0 +1,28 @@
+[package]
+name = "shorty-rs"
+version = "0.1.0"
+authors = ["Neville Dipale <nevilledips@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+bson                = "0.13"
+mongodb             = "0.3"
+tower-grpc          = {version = "0.1", features = ["tower-hyper"] }
+tower-hyper         = "0.1"
+prost               = "0.5"
+prost-types         = "0.5"
+prost-derive        = "0.5"
+futures             = "~0.1"
+futures-cpupool     = "~0.1"
+tls-api             = "0.1.19"
+bytes               = "~0.4"
+serde               = "~1.0"
+serde_derive        = "~1.0"
+tokio               = "0.1"
+log                 = "0.4"
+env_logger          = "0.6"
+dotenv              = "0.13"
+chrono              = "0.4"
+
+[build-dependencies]
+tower-grpc-build    = { version = "0.1", features = ["tower-hyper"] }

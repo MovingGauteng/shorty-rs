@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package shorty;
+option java_package = "za.co.movinggauteng.proto";
+option java_outer_classname = "ShortyProto";
+option optimize_for = SPEED;
+
+service ShortyService {
+    // shorten an url
+    rpc Shorten(ShortenRequest) returns (Shorty) {}
+    // increment number of times the url has been viewed
+    rpc AddCounter(Counter) returns (Empty) {}
+    // get url, you only need to provide the url (shortened suffix)
+    rpc GetUrl (Shorty) returns (Shorty) {}
+}
+
+message Empty {}
+
+message Counter {
+    string id = 1;
+    uint32 value = 2;
+}
+
+message ShortenRequest {
+    string url = 1;
+    GoogleAnalyticsCampaign campaign = 2;
+}
+
+message Shorty {
+    string id = 1;
+    string url = 2;
+}
+
+message GoogleAnalyticsCampaign {
+    string utm_source = 1;
+    string utm_medium = 2;
+    string utm_campaign = 3;
+    string utm_term = 4;
+    string utm_content = 5;
+}
